@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Customize</title>
+
+    <link rel="stylesheet" href="netpay.css" />
+    <script src="customize.js"></script>
+  </head>
+  <!--Body has onload event that runs script-->
+  <body>
+    
+    <!--Form that runs script on submit-->
+    <form id="myForm" style="float:left; padding-right:5%;" onsubmit="return populateAttributes()">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="nickname">Nickname:</label><br>
+        <input type="text" id="nickname" name="nickname"><br>
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" name="email"><br>
+        <label for="movie">Favorite Movie:</label><br>
+        <input type="text" id="movie" name="movie"><br>
+        <label for="book">Favorite Book:</label><br>
+        <input type="text" id="book" name="book"><br>
+        <label for="music">Favorite Type Of Music:</label><br>
+        <input type="text" id="music" name="music"><br>
+        <label for="name">About You:</label><br>
+        <textarea id="about" name="about" rows="4" cols="50"></textarea><br>
+        <label for="avatar">Link To Avatar Image:</label><br>
+        <input type="text" id="avatar" name="avatar"><br><br>
+        <label for="background">Select a background color:</label><br>
+        <select id="background" name="background">
+            <option value="white">White</option>
+            <option value="black">Black</option>
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+        </select><br>
+        <label for="txtcolor">Select a text color:</label><br>
+        <select id="txtcolor" name="txtcolor">
+            <option value="black">Black</option>
+            <option value="white">White</option>
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+        </select><br>
+        <label for="txtsize">Enter text size (in pixels):</label><br>
+        <input type="text" id="txtsize" name="txtsize"><br><br>
+        <input type="submit">               
+    </form> 
+   
+    <!--Display area for changes-->
+    <div id="customized_area" style="margin-left:25%; margin-right:25%;">
+        <p>Avatar:</p> <img id="avatarOutput" src="">
+        <p>Name: <span id="nameOutput" class="result"></span></p>
+        <p>Nickname: <span id="nicknameOutput" class="result"></span></p>
+        <p>Email: <span id="emailOutput" class="result"></span></p>
+        <p>Favorite Movie: <span id="movieOutput" class="result"></span></p>
+        <p>Favorite Book: <span id="bookOutput" class="result"></span></p>
+        <p>Favorite Music: <span id="musicOutput" class="result"></span></p>
+        <p>About Me: <span id="aboutOutput" class="result"></span></p>
+    </div>
+
+
+  </body>
+</html>
