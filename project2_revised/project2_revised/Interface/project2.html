@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="project2.js"></script>
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Welcome to Bloggo!</h1>
+        <h3 class="hideable">Existing User Login</h3>
+        <div class="boxed hideable">
+            <label for="login_username">Username:</label>
+            <input id="login_username" type="text"><br><br>
+            <label for="login_password">Password:</label>
+            <input id="login_password" type="text"><br><br>
+            <button onclick="Login()">Login</button>
+        </div>
+
+        <h3 class="hideable">Register New User</h3>
+        <div class="boxed hideable">            
+            <label for="username">Username:</label>
+            <input id="username" type="text"><br><br>
+            <label for="password">Password:</label>
+            <input id="password" type="text"><br><br>
+            <button onclick="FormCreate()">Register</button>
+        </div> <br/>    
+    
+    
+    <div class="row">
+        <div class="hidden column">
+            <h2>Blog Entry</h2>
+        <hr>    
+            <textarea id = "blog" row="50" cols="50" name="blog"></textarea><br/>
+            <button onclick="UpdateBlog()">Update Blog</button>
+            <button onclick="EditBlog()">Edit Existing Blog</button>
+        </div>
+            
+        <div class="hidden column">    
+            <h2>Readers</h1>  
+        <hr>
+            <button id="follower_button" onclick="GetFollowers()">Toggle Reader List</button><br/><br/>                   
+            <div id="reader_display"></div>            
+        </div>
+    </div>
+    <div class="row">    
+        <div class="hidden column">           
+            <h2>Blog Display Place</h1>
+        <hr>           
+            <div id="blog_display"></div>
+        </div>
+
+        <div class="hidden column">             
+            <h2>User List</h1>
+        <hr>               
+            <button id="user_button" onclick="GetUsers()">Toggle User List</button><br/><br/>                
+            <div id="user_display"></div>            
+        </div>
+    </div>
+
+    </body>
+</html>

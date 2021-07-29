@@ -1,0 +1,14 @@
+th {
+    color: #FFFFFF;
+    font-weight: bold;
+    background-color: #006A90;
+}
+
+td, p {
+    color: #006A90;
+}
+
+h2 {
+    color: #006A90;
+    text-align: center;
+}

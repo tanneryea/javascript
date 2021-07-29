@@ -1,0 +1,37 @@
+.boxed {
+    width: 400px;
+    padding: 10px;
+    border: 2px solid black;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+textarea {
+    width: 400px;
+    min-height:200px;
+    height:auto;
+    border:2px solid rgba(63,63,63,1);
+}
+
+.column {
+    float: left;
+    padding: 5px;
+    width: 48%;
+    border: 2px solid black;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin: 5px;
+}
+
+.row:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+hr {
+    background-color: black;
+    height: 2px;
+}

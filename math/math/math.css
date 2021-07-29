@@ -1,0 +1,15 @@
+body {
+    background-color: lightslategray;
+    color: blue;
+}
+
+.question {
+    border-style: dashed;
+    padding: 0.5em;
+    border-color: black;
+    margin: 0.5em;
+}
+
+header {
+    text-align: center;
+}

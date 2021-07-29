@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Lunch</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <script>
+    //Gets sandwich value and places it in order display
+    function pickSandwich(picked)
+    {
+        var entree = document.getElementById(picked).value;
+        document.getElementById('sandwich').innerHTML = entree;
+    }
+    //Gets drink value and places it in order display
+    function pickDrink(picked)
+    {
+        var drink = document.getElementById(picked).value;
+        document.getElementById('drink').innerHTML = drink;
+    }
+    //Gets customer name value and places it in order display
+    function customerInfo(cName)
+    {
+        var dinerName = document.getElementById(cName).value;
+        document.getElementById('cust_name').innerHTML = dinerName;
+    }
+    //Gets phone number value and places it in order display
+    function customerPhone(cell)
+    {
+        var phone = document.getElementById(cell).value;
+        document.getElementById('cell_phone').innerHTML = phone;
+    }
+    //Gets side values and places them in display. Can select two sides
+    function pickSides()
+    {
+
+        var flag = false;
+        var i = 0;
+        var side1 = "";
+        var side2 = "";
+        for (i = 1; i <= 5; i++){
+            if ((document.getElementById(i).checked == true) && (flag == false))
+            {
+                side1 = document.getElementById(i).value;
+                flag = true;
+            }
+            else if ((document.getElementById(i).checked == true) && (flag == true))
+            {
+                side2 = document.getElementById(i).value;
+            }
+        }
+        document.getElementById('side_one').innerHTML = side1;
+        document.getElementById('side_two').innerHTML = side2;
+    }
+    </script>
+  </head>
+  <body>
+      <!--Beginning of order form. Has hidden value and mailto action-->
+      <form name="order" method="post" id="lunch" enctype="text/plain" action="mailto:whocares@lunchtime.net?subject=Lunch">
+        <input type="hidden" name="meal" id="lunch" value="lunch choice">
+        <h2><br/>Select Your Meal</h2>
+        <div style="width: 80%;">
+        <div style="width: 30%; float: left;">
+        <fieldset><legend>Your Information</legend> <!--Customer info with onclick buttons-->
+            <label>Your name:<br/></label>
+            <input type="text" name="dinername" id="dinername" size="30" value=""/>
+            <input type="button" onclick="customerInfo('dinername')" value="ok"></button>
+            <p>We will call your cell phone when your order is ready.<br/></p>
+            <label>Phone:<br/></label>
+            <input type="text" name="phone" id="phone" size="30" value=""/>
+            <input type="button" onclick="customerPhone('phone')" value="ok"></button><br/>            
+        </fieldset>        
+        </div>
+        <div style="width: 20%; float: left;">
+        <fieldset><legend>Sandwich</legend> <!--Sandwich choices with onclick for radio buttons-->
+            <h3>Pick your sandwich:</h3>
+            <input type="radio" name="sandwich" id="club" value="Club Sandwich" onclick="pickSandwich('club')">Club Sandwich<br/>
+            <input type="radio" name="sandwich" id="blt" value="BLT Sandwich" onclick="pickSandwich('blt')">BLT Sandwich<br/>
+            <input type="radio" name="sandwich" id="tuna" value="Tuna Sandwich" onclick="pickSandwich('tuna')">Tuna Sandwich<br/>
+            <input type="radio" name="sandwich" id="pastrami" value="Pastrami Sandwich" onclick="pickSandwich('pastrami')">Pastrami Sandwich<br/>
+            <input type="radio" name="sandwich" id="dip" value="French Dip Sandwich" onclick="pickSandwich('dip')">French Dip Sandwich<br/>          
+        </fieldset>        
+        </div>
+        <div style="width: 20%; float: left;">
+        <fieldset><legend>Side</legend> <!--Side choices with an onclick to submit the sides-->
+            <h3>Pick two sides:</h3>
+            <input type="checkbox" name="side" id="1" value="Potato Chips">Potato Chips<br/>
+            <input type="checkbox" name="side" id="2" value="Fruit Cup">Fruit Cup<br/>
+            <input type="checkbox" name="side" id="3" value="French Fries">French Fries<br/>
+            <input type="checkbox" name="side" id="4" value="Potato Salad">Potato Salad<br/>
+            <input type="checkbox" name="side" id="5" value="Pickle">Pickle<br/> 
+            <input type="button" onclick="pickSides()" value="Enter my side selections"></button>  
+        </fieldset>        
+        </div>
+        <div style="width: 20%; float: left;">
+        <fieldset><legend>Drink</legend> <!--Drink choice, similar to sandwich choice-->
+            <h3>Pick your drink:</h3>
+            <input type="radio" name="drink" id="cola" value="Cola" onclick="pickDrink('cola')">Cola<br/>
+            <input type="radio" name="drink" id="lemonade" value="Lemonade" onclick="pickDrink('lemonade')">Lemonade<br/>
+            <input type="radio" name="drink" id="water" value="Water" onclick="pickDrink('water')">Water<br/>
+            <input type="radio" name="drink" id="lemon_lime" value="Lemon-Lime Soda" onclick="pickDrink('lemon_lime')">Lemon-Lime Soda<br/>
+            <input type="radio" name="drink" id="tea" value="Iced Tea" onclick="pickDrink('tea')">Iced Tea<br/>          
+        </fieldset>        
+        </div> <div style="clear:both;"></div>
+        <div><input type="reset" value="Reset the form"><br/></div>  <!--Clears the form for new selections-->  
+        <div>
+            <h3>Your meal:</h3> <!--Display user entered info-->
+            <h3>Your name: <span id = "cust_name">&nbsp;</span></h3>
+            <h3>Your contact phone: <span id = "cell_phone">&nbsp;</span></h3>
+            <h3>Your sandwich: <span id = "sandwich">&nbsp;</span></h3>
+            <h3>Your first side: <span id = "side_one">&nbsp;</span></h3>
+            <h3>Your second side: <span id = "side_two">&nbsp;</span></h3>
+            <h3>Your drink: <span id = "drink">&nbsp;</span></h3>
+        </div>
+        <div style="width: 40%; float: left;">
+            <h3>Comments or questions:</h3> <!--Comment text field-->
+            <textarea name="lunchorder" id="lunch" rows="6" cols="40">Enter your comments or questions here</textarea>       
+        </div><div style="clear:both;"></div>
+        <div>
+            <input type = "submit" value="Submit my order"><br/> <!--Submits entire order as a mailto per opening form tag-->
+        </div>
+      </form>
+    
+
+
+
+
+
+  </body>
+</html>

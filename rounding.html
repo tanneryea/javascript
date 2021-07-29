@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Rounding</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <script>
+        function roundNumbers()
+        {
+          var floatNum = 0;
+          floatNum = prompt("Enter any number or enter a letter to quit", "0");
+
+          while (!isNaN(floatNum)){ //Checks to see if value entered is number or not
+              var parsedNum = parseInt(floatNum); //Removes decimal and places number in new value
+              var roundedNum;
+              if (parsedNum % 2 == 0){ //If the integer is even, it rounds original value down
+                  var roundedNum = Math.floor(floatNum);
+              } else { //Else it rounds the original value up
+                  var roundedNum = Math.ceil(floatNum);
+              }
+              //Writes values to webpage and then prompts user to continue or end loop
+            document.write("<p>You entered the value " + floatNum + ". It rounded to " + roundedNum + "<p>");
+            floatNum = prompt("Enter any number or enter a letter to quit and display results", "0");   
+          }
+        }  
+    </script>
+  </head>
+
+  <body onload="roundNumbers()">
+    
+  </body>
+</html>
